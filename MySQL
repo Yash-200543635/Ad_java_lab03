@@ -1,0 +1,63 @@
+-- Create a table for storing student information
+CREATE TABLE students (
+    student_id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    email VARCHAR(100)
+);
+
+-- Create a table for storing courses
+CREATE TABLE courses (
+    course_id INT AUTO_INCREMENT PRIMARY KEY,
+    course_name VARCHAR(100),
+    instructor VARCHAR(100)
+);
+
+-- Create a table for recording attendance
+CREATE TABLE attendance (
+    attendance_id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id INT,
+    course_id INT,
+    date DATE,
+    status ENUM('Present', 'Absent', 'Late')
+);
+
+-- Insert sample student data
+INSERT INTO students (first_name, last_name, email)
+VALUES
+    ('Yash', 'Sharma', 'yash@example.com'),
+    ('Jaimin', 'Joshi', 'joshi@example.com'),
+    ('Meet', 'Patel', 'meet@example.com'),
+    ('Raj', 'Dobariya', 'raj@example.com'),
+    ('Vivek', 'Patel', 'vpatel@example.com'),
+    ('Akash', 'Shah', 'shah@example.com'),
+    ('Dhruv', 'Gadhiya', 'dhruv@example.com'),
+    ('Het', 'Parekh', 'hetp@example.com'),
+    ('Harsh', 'Valand', 'valand@example.com'),
+    ('Ravi', 'Sharma', 'ravi@example.com')
+    ;
+
+-- Insert sample course data
+INSERT INTO courses (course_name, instructor)
+VALUES
+    ('Math 101', 'Professor Arvind'),
+    ('Science 102', 'Professor Makwana'),
+    ('Social Science 103', 'Professor Tarang'),
+    ('English 104', 'Professor Dube'),
+    ('French 105', 'Professor Naina')    
+;
+
+-- Insert sample attendance records
+INSERT INTO attendance (student_id, course_id, date, status)
+VALUES
+    (1, 1, '2023-10-09', 'Present'),
+    (2, 1, '2023-10-09', 'Present'),
+    (3, 1, '2023-10-09', 'Absent'),
+    (4, 1, '2023-10-09', 'Present'),
+    (5, 1, '2023-10-09', 'Present'),
+    (6, 1, '2023-10-09', 'Present'),
+    (7, 1, '2023-10-09', 'Present'),
+    (8, 1, '2023-10-09', 'Absent'),
+    (9, 1, '2023-10-09', 'Late'),
+    (10, 1, '2023-10-09', 'Present')
+    ;
